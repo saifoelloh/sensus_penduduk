@@ -28,9 +28,21 @@
         android:padding="50dp">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="List Sensus" />
+
+        <Button
+            android:id="@+id/btnTambah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tambah Sensus" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"/>
     </LinearLayout>
 </LinearLayout>

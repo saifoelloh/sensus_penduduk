@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Input Data Provinsi"
         android:textStyle="bold"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:layout_marginVertical="50dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,10 +68,28 @@
             android:hint="Jumlah Penduduk"
             android:inputType="number" />
 
-        <Button
-            android:id="@+id/btnInputPrefektur"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="submit" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="30dp">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="cancel" />
+
+            <Button
+                android:id="@+id/btnInputPrefektur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="submit" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </LinearLayout>
