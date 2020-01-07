@@ -76,7 +76,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/rt"
+                        android:id="@+id/kepala_keluarga"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -85,7 +85,7 @@
                         android:inputType="number" />
 
                     <EditText
-                        android:id="@+id/rw"
+                        android:id="@+id/penduduk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

@@ -43,7 +43,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void list() {
-        Intent intent = new Intent(this, InputPrefektur.class);
+        Intent intent = new Intent(this, ListSensus.class);
         startActivity(intent);
     }
 

@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void login() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 }

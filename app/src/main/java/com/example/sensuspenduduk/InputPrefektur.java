@@ -35,8 +35,8 @@ public class InputPrefektur extends AppCompatActivity {
         kota = findViewById(R.id.kota);
         kecamatan = findViewById(R.id.kecamatan);
         kelurahan = findViewById(R.id.kelurahan);
-        rt = findViewById(R.id.rt);
-        rw = findViewById(R.id.rw);
+        rt = findViewById(R.id.kepala_keluarga);
+        rw = findViewById(R.id.penduduk);
         kepala_keluarga = findViewById(R.id.kepala_keluarga);
         penduduk = findViewById(R.id.penduduk);
 
