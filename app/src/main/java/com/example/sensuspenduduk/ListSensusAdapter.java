@@ -34,26 +34,15 @@ public class ListSensusAdapter extends RecyclerView.Adapter<ListSensusAdapter.Li
     @Override
     public void onBindViewHolder(@NonNull ListSensusViewHolder holder, int position) {
         final Sensus sensus = list.get(position);
-        String loc = sensus.getKelurahan() + ", " + sensus.getKecamatan() + ", " + sensus.getKota() + ", " + sensus.getProvinsi();
+        String loc = sensus.getKota() + ", " + sensus.getKecamatan() + ", " + sensus.getKelurahan();
+        String prov = sensus.getProvinsi();
 
         db = FirebaseFirestore.getInstance();
 
         holder.location.setText(loc);
+        holder.province.setText(prov);
         holder.kepalaKeluarga.setText(sensus.getKepala_keluarga().toString());
         holder.penduduk.setText(sensus.getPenduduk().toString());
-        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changeSensus(v, sensus);
-                System.out.println("Edit ke-" + sensus.getKota());
-            }
-        });
-        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("Delete ke-" + sensus.getKota());
-            }
-        });
     }
 
     @Override
@@ -62,15 +51,13 @@ public class ListSensusAdapter extends RecyclerView.Adapter<ListSensusAdapter.Li
     }
 
     public static class ListSensusViewHolder extends RecyclerView.ViewHolder {
-        public TextView location, kepalaKeluarga, penduduk;
-        public Button btnEdit, btnDelete;
+        public TextView location, province, kepalaKeluarga, penduduk;
         public ListSensusViewHolder(View view) {
             super(view);
             location = (TextView) view.findViewById(R.id.location);
+            province = (TextView) view.findViewById(R.id.province);
             kepalaKeluarga = (TextView) view.findViewById(R.id.kepala_keluarga);
             penduduk = (TextView) view.findViewById(R.id.penduduk);
-            btnEdit = (Button) view.findViewById(R.id.btnEdit);
-            btnDelete = (Button) view.findViewById(R.id.btnDelete);
         }
     }
 

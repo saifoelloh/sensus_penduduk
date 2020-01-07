@@ -4,6 +4,9 @@ public class Sensus {
     private String provinsi, kota, kecamatan, kelurahan;
     private Integer rt, rw, kepala_keluarga, penduduk;
 
+    public Sensus() {
+    }
+
     public Sensus(String provinsi, String kota, String kecamatan, String kelurahan, Integer rt, Integer rw, Integer kepala_keluarga, Integer penduduk) {
         this.provinsi = provinsi;
         this.kota = kota;
