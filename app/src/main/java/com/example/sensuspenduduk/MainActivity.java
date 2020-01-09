@@ -15,8 +15,11 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,8 +58,11 @@ public class MainActivity extends AppCompatActivity {
                                     toast.setText(msg);
                                     toast.show();
                                 } else {
+                                    Bundle bundle = new Bundle();
+                                    List<DocumentSnapshot> snapshot = task.getResult().getDocuments();
+                                    bundle.putString("admin", snapshot.get(0).get("name").toString());
                                     toast.show();
-                                    login();
+                                    login(bundle);
                                 }
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -73,8 +79,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    protected void login() {
+    protected void login(Bundle bundle) {
         Intent intent = new Intent(this, MainMenu.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }

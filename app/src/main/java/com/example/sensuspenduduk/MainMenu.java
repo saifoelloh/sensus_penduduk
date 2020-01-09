@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainMenu extends AppCompatActivity {
 
-    private Button list, tambah, logout;
+    private Button list, tambah, rekap, logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class MainMenu extends AppCompatActivity {
 
         list = findViewById(R.id.btnList);
         tambah = findViewById(R.id.btnTambah);
+        rekap = findViewById(R.id.btnRekap);
         logout = findViewById(R.id.btnLogout);
 
         list.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +32,13 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tambah();
+            }
+        });
+
+        rekap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rekap();
             }
         });
 
@@ -49,6 +57,12 @@ public class MainMenu extends AppCompatActivity {
 
     public void tambah() {
         Intent intent = new Intent(this, InputPrefektur.class);
+        intent.putExtra("admin", this.getIntent().getStringExtra("admin"));
+        startActivity(intent);
+    }
+
+    public void rekap() {
+        Intent intent = new Intent(this, ReportActivity.class);
         startActivity(intent);
     }
 

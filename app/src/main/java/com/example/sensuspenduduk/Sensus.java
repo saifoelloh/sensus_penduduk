@@ -1,21 +1,10 @@
 package com.example.sensuspenduduk;
 
 public class Sensus {
-    private String provinsi, kota, kecamatan, kelurahan;
+    private String provinsi, kota, kecamatan, kelurahan, admin;
     private Integer rt, rw, kepala_keluarga, penduduk;
 
     public Sensus() {
-    }
-
-    public Sensus(String provinsi, String kota, String kecamatan, String kelurahan, Integer rt, Integer rw, Integer kepala_keluarga, Integer penduduk) {
-        this.provinsi = provinsi;
-        this.kota = kota;
-        this.kecamatan = kecamatan;
-        this.kelurahan = kelurahan;
-        this.rt = rt;
-        this.rw = rw;
-        this.kepala_keluarga = kepala_keluarga;
-        this.penduduk = penduduk;
     }
 
     public String getProvinsi() {
@@ -80,5 +69,13 @@ public class Sensus {
 
     public void setPenduduk(Integer penduduk) {
         this.penduduk = penduduk;
+    }
+
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
     }
 }

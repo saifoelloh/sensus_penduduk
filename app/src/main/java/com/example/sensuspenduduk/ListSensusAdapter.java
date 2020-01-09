@@ -36,6 +36,7 @@ public class ListSensusAdapter extends RecyclerView.Adapter<ListSensusAdapter.Li
         final Sensus sensus = list.get(position);
         String loc = sensus.getKota() + ", " + sensus.getKecamatan() + ", " + sensus.getKelurahan();
         String prov = sensus.getProvinsi();
+        String admin = "By " + sensus.getAdmin().toString();
 
         db = FirebaseFirestore.getInstance();
 
@@ -43,6 +44,7 @@ public class ListSensusAdapter extends RecyclerView.Adapter<ListSensusAdapter.Li
         holder.province.setText(prov);
         holder.kepalaKeluarga.setText(sensus.getKepala_keluarga().toString());
         holder.penduduk.setText(sensus.getPenduduk().toString());
+        holder.admin.setText(admin);
     }
 
     @Override
@@ -51,13 +53,14 @@ public class ListSensusAdapter extends RecyclerView.Adapter<ListSensusAdapter.Li
     }
 
     public static class ListSensusViewHolder extends RecyclerView.ViewHolder {
-        public TextView location, province, kepalaKeluarga, penduduk;
+        public TextView location, province, kepalaKeluarga, penduduk, admin;
         public ListSensusViewHolder(View view) {
             super(view);
             location = (TextView) view.findViewById(R.id.location);
             province = (TextView) view.findViewById(R.id.province);
             kepalaKeluarga = (TextView) view.findViewById(R.id.kepala_keluarga);
             penduduk = (TextView) view.findViewById(R.id.penduduk);
+            admin = (TextView) view.findViewById(R.id.admin);
         }
     }
 

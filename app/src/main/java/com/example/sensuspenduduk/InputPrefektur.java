@@ -81,6 +81,7 @@ public class InputPrefektur extends AppCompatActivity {
         sensus.put("rw", inRw);
         sensus.put("kepala_keluarga", inKepala_keluarga);
         sensus.put("penduduk", inPenduduk);
+        sensus.put("admin", this.getIntent().getStringExtra("admin"));
 
         System.out.println("Mulai Mamen");
         System.out.println(sensus);
